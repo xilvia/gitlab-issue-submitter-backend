@@ -1,8 +1,7 @@
 import { HttpModule, Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthController } from './modules/auth/controllers/auth.controller';
-import { AuthService } from './modules/auth/services/auth.service';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
@@ -12,8 +11,9 @@ import { AuthService } from './modules/auth/services/auth.service';
         maxRedirects: 5,
       }),
     }),
+    AuthModule
   ],
-  controllers: [AppController, AuthController],
-  providers: [AppService, AuthService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

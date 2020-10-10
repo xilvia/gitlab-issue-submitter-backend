@@ -1,5 +1,4 @@
 export interface IGitLabUrls {
-  apiUrl: string;
   authUrl: string;
 }
 
